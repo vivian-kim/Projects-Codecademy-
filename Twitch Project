@@ -1,0 +1,38 @@
+select time
+from stream
+limit 10; 
+-----------------------------------------------------------
+select game,
+Case
+when game = 'Leage of Legends'
+then 'MOBA'
+when game = 'Dota2' 
+then 'MOBA'
+when game = 'Heroes of the Strom' 
+then 'MOBA'
+when game = 'Counter-Strike:Global offensive'
+then 'FPS'
+when game = 'DayZ'
+then 'Survival'
+else 'Other'
+END AS 'genre',
+count(*)
+from stream
+group by 1
+order by 3 desc;
+--------------------------------------------------------------
+SELECT *
+from stream
+Join chat
+on stream.device_id = chat.device_id;
+
+------------------------------------------------------
+
+#Visualising with Matplotlib
+
+import codecademylib3_seaborn
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+
+
